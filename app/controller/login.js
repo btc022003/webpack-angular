@@ -1,4 +1,4 @@
-angular.module('app').controller('loginControl',['$scope','$window','$cookies',function($scope,$window,$cookies){
+var controller = angular.module('app').controller('loginControl',['$scope','$window','$cookies',function($scope,$window,$cookies){
   $scope.logIn = function(){
     console.log($scope.userName)
     if(!$scope.userName){
@@ -14,3 +14,5 @@ angular.module('app').controller('loginControl',['$scope','$window','$cookies',f
     }
   }
 }])
+
+module.exports = controller

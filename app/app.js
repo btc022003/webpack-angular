@@ -11,6 +11,7 @@ var app = angular.module('app', ['ngRoute', 'ngCookies'])
 var tplMain = require('./tpl/main.html')
 var tplAbout = require('./tpl/about.html')
 var tplLogin = require('./tpl/login.html')
+var tplList = require('./tpl/list.html')
 
 var commonServices = require('./services/common_services')
 app.factory('commonServices', ['$http', '$q', commonServices])
@@ -19,6 +20,7 @@ app.factory('commonServices', ['$http', '$q', commonServices])
 require('./controller/main')
 require('./controller/about')
 require('./controller/login')
+require('./controller/list')
 
 /////使用factory方式创建一个service
 app.factory('checkoutLogined', ['$cookies',function($cookies) {
@@ -58,6 +60,10 @@ angular.module('app').config(['$routeProvider',function($routeProvider) {
         .when('/login', {
             template: tplLogin,
             controller: 'loginControl'
+        })
+        .when('/list',{
+          template:tplList,
+          controller:'listController'
         })
         .otherwise({
             redirectTo: '/'

@@ -1,0 +1,4 @@
+<input type="text" ng-model="txtName" placeholder="输入内容进行筛选">
+<ul>
+  <li ng-repeat="item in data | filter:txtName">{{item.name}}</li>
+</ul>
