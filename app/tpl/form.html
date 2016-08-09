@@ -1,0 +1,10 @@
+<form novalidate name="form">
+  <div>
+    <input type="text" placeholder="请输入姓名" name="name" ng-model="name"  required ng-minlength="2" autofocus>
+    <span class="error" ng-show="form.name.$invalid && form.name.$dirty">最小长度为2</span>
+</div>
+
+  <p>{{form.name.$valid}}</p>
+  <p>{{form.name.$dirty}}</p>
+  <p>{{form.name.$error}}</p>
+</form>

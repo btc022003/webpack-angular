@@ -13,6 +13,7 @@ var tplMain = require('./tpl/main.html')
 var tplAbout = require('./tpl/about.html')
 var tplLogin = require('./tpl/login.html')
 var tplList = require('./tpl/list.html')
+var tplForm = require('./tpl/form.html')
 
 var commonServices = require('./services/common_services')
 
@@ -38,6 +39,7 @@ require('./controller/main')
 require('./controller/about')
 require('./controller/login')
 require('./controller/list')
+require('./controller/form')
 
 /////使用factory方式创建一个service
 app.factory('checkoutLogined', ['$cookies',function($cookies) {
@@ -81,6 +83,10 @@ angular.module('app').config(['$routeProvider',function($routeProvider) {
         .when('/list',{
           template:tplList,
           controller:'listController'
+        })
+        .when('/form',{
+          template:tplForm,
+          controller:'formController'
         })
         .otherwise({
             redirectTo: '/'
