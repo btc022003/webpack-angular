@@ -1,12 +1,12 @@
 var angular = require('angular')
 require('angular-route')
 require('angular-cookies') ////引入angular-cookies模块
-
+require('angular-animate')
 
 console.log(tplMain)
 
 
-var app = angular.module('app', ['ngRoute', 'ngCookies'])
+var app = angular.module('app', ['ngRoute', 'ngCookies','ngAnimate'])
 
 /////引入模版,为了更加的增强模块化的概念引入html-loader插件实现代码的预加载
 var tplMain = require('./tpl/main.html')
