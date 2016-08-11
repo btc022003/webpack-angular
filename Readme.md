@@ -21,6 +21,22 @@ webpack引入es6的语法暂时存在问题没有解决
 #/form  表单验证部分内容
 ```
 
+> 在页面中实现导航数据的通用加载方式
+```html
+<!--通过在index.html设置一个控制器的方式实现在代码中能动态读取数据-->
+<body ng-app="app" ng-controller="navController">
+    <a href="#/">index</a>
+    <a href="#/about/tom">about</a>
+    <a href="#/login">login</a>
+    <a href="#/list">login</a>
+    <a href="#/form">form</a>
+    <a ng-repeat="item in data" href="{{item.link}}">{{item.label}}</a>
+    <div ng-view>
+    </div>
+    <script src="bundle.js"></script>
+</body>
+```
+
 #### 待新增功能
 ```
 表单验证部分内容
