@@ -35,11 +35,12 @@ app.filter('myInput',function(){
 })
 
 ////引入控制器部分
-require('./controller/main')
-require('./controller/about')
-require('./controller/login')
-require('./controller/list')
-require('./controller/form')
+require('./controller/main_controller')
+require('./controller/about_controller')
+require('./controller/login_controller')
+require('./controller/list_controller')
+require('./controller/form_controller')
+require('./controller/nav_controller')
 
 /////使用factory方式创建一个service
 app.factory('checkoutLogined', ['$cookies',function($cookies) {
