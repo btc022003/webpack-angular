@@ -20,7 +20,8 @@ app.all('/api/*', (req, res, next) => {
     next()
 })
 
-
+////引入api的js
+app.use('/api',require('./routes/api/v1/data.js'))
 
 app.listen(3000, function() {
     console.log('服务器运行中....')
