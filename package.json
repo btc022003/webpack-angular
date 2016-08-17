@@ -17,6 +17,8 @@
     "angular-route": "^1.5.8",
     "body-parser": "^1.15.2",
     "express": "^4.14.0",
+    "highcharts": "^4.2.6",
+    "highcharts-ng": "0.0.12",
     "html-loader": "^0.4.3",
     "webpack": "^1.13.1",
     "webpack-dev-server": "^1.14.1",
