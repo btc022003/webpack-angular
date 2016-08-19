@@ -17,11 +17,12 @@ console.log(tplMain)
 var app = angular.module('app', ['ngRoute', 'ngCookies','ngAnimate','highcharts-ng'])
 
 /////引入模版,为了更加的增强模块化的概念引入html-loader插件实现代码的预加载
-var tplMain = require('./tpl/main.html')
-var tplAbout = require('./tpl/about.html')
-var tplLogin = require('./tpl/login.html')
-var tplList = require('./tpl/list.html')
-var tplForm = require('./tpl/form.html')
+var tplMain = require('./tpl/main')
+var tplAbout = require('./tpl/about')
+var tplLogin = require('./tpl/login')
+var tplList = require('./tpl/list')
+var tplForm = require('./tpl/form')
+
 
 var commonServices = require('./services/common_services')
 
