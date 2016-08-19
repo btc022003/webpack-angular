@@ -37,6 +37,25 @@ webpack引入es6的语法暂时存在问题没有解决
 </body>
 ```
 
+#### 关于使用es6语法的问题
+
+> 如果在webpack中使用es6的语法,需要babel-loader插件的引入.在使用的时候6.0的新版本插件配置和以前不同,需要注意
+
+```
+需要安装
+  npm install babel-preset-es2015 --save
+
+在配置文件做相应的调整
+  {
+    test:/\.jsx?$/,
+    exclude:/node_modules/,
+    loader:'babel',
+    query: {
+      presets: ['es2015']
+    }
+  }
+```
+
 #### 待新增功能
 ```
 表单验证部分内容

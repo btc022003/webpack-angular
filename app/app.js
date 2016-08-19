@@ -1,4 +1,5 @@
-var angular = require('angular')
+import angular from 'angular'
+// var angular = require('angular')
 require('angular-route')
 require('angular-cookies') ////引入angular-cookies模块
 require('angular-animate')

@@ -26,11 +26,14 @@ module.exports = {
                 loader: 'html-loader'
             },
             // 此项配置暂时有问题 无法实现效果
-            // {
-            //   test:/\.jsx?$/,
-            //   exclude:/node_modules/,
-            //   loader:'babel-loader'
-            // }
+            {
+              test:/\.jsx?$/,
+              exclude:/node_modules/,
+              loader:'babel',
+              query: {
+                presets: ['es2015']
+              }
+            }
         ]
     }
 }
