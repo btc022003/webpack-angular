@@ -2,6 +2,8 @@ var express = require('express')
 var bodyParser = require('body-parser')
 
 var app = express()
+
+// 引入格式化页面传递参数时数据格式化的中间件
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({
     extended: false
