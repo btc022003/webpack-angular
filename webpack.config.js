@@ -13,7 +13,8 @@ module.exports = {
     },
     output: {
         path: path.resolve(__dirname, 'bundle'),
-        filename: "bundle.js"
+        filename: "bundle.js",
+        publicPath: "bundle/",
     },
     plugins: [
         new webpack.HotModuleReplacementPlugin(),

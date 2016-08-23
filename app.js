@@ -9,6 +9,7 @@ app.use(bodyParser.urlencoded({
     extended: false
 }))
 
+app.use(express.static('bundle'))
 
 /**
  * 加入api调用时跨域访问问题的处理
