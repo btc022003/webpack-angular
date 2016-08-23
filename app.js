@@ -11,6 +11,10 @@ app.use(bodyParser.urlencoded({
 
 app.use(express.static('bundle'))
 
+// app.get('/hehe',(req,res)=>{
+//   res.send('hehe')
+// })
+
 /**
  * 加入api调用时跨域访问问题的处理
  */

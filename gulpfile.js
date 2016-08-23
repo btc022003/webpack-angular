@@ -4,6 +4,7 @@ var webpack = require("webpack");
 var WebpackDevServer = require("webpack-dev-server");
 var webpackConfig = require("./webpack.config.js");
 var minifycss = require('gulp-minify-css');
+var nodemon = require('gulp-nodemon')
 
 var htmlmin = require('gulp-htmlmin');
 
@@ -25,15 +26,15 @@ gulp.task('html', function() {
 })
 
 /////创建一个编译压缩less的命令
-gulp.task('cssmin',function(){
-  gulp.src('./app/style/*.css')
-      .pipe(minifycss())
-      .pipe(gulp.dest('bundle/style'));
+gulp.task('cssmin', function() {
+    gulp.src('./app/style/*.css')
+        .pipe(minifycss())
+        .pipe(gulp.dest('bundle/style'));
 });
 
 // The development server (the recommended option for development)
 // 默认任务 首先压缩html文件 然后运行webpack-dev-server
-gulp.task("default", ["html","webpack-dev-server"]);
+gulp.task("default", ["html", "webpack-dev-server"]);
 
 
 // Production build
@@ -62,6 +63,17 @@ gulp.task("webpack:build", function(callback) {
         callback();
     });
 });
+
+// 创建一个nodejs改变代码后的监视任务 不需要每次都重启nodejs服务
+gulp.task('start', function() {
+    nodemon({
+        script: 'app.js',
+        ext: 'js html',
+        env: {
+            'NODE_ENV': 'development'
+        }
+    })
+})
 
 
 
