@@ -1,14 +1,19 @@
 import angular from 'angular'
 // var angular = require('angular')
-require('angular-route')
-require('angular-cookies') ////引入angular-cookies模块
-require('angular-animate')
+// require('angular-route')
+import ngRoute from 'angular-route'
+// require('angular-cookies') ////引入angular-cookies模块
+import ngCookies from 'angular-cookies'
+// require('angular-animate')
+import ngAnimate from 'angular-animate'
 // require('highcharts')
 var Highcharts = require('highcharts')
 
 ////通过此方法解决报错提示 Highcharts is not defined
 ///通过全局暴露一个变量的方式解决此问题
 window.Highcharts = Highcharts
+
+
 
 require('highcharts-ng')
 
