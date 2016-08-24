@@ -2,6 +2,11 @@ var path = require('path')
 var webpack = require('webpack')
     ////提取公用插件
 var commonsPlugin = new webpack.optimize.CommonsChunkPlugin('common.js')
+
+var Dashboard = require('webpack-dashboard');
+var DashboardPlugin = require('webpack-dashboard/plugin');
+var dashboard = new Dashboard();
+
 module.exports = {
     entry: [
         // 'webpack/hot/dev-server',
@@ -18,7 +23,8 @@ module.exports = {
     },
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
-        commonsPlugin
+        commonsPlugin,
+        new DashboardPlugin(dashboard.setData)
     ],
     module: {
         loaders: [{
