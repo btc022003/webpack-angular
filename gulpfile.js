@@ -4,7 +4,7 @@ var webpack = require("webpack");
 var WebpackDevServer = require("webpack-dev-server");
 var webpackConfig = require("./webpack.config.js");
 var minifycss = require('gulp-minify-css');
-var nodemon = require('gulp-nodemon')
+var nodemon = require('gulp-nodemon');
 
 var htmlmin = require('gulp-htmlmin');
 
@@ -19,11 +19,11 @@ gulp.task('html', function() {
         removeStyleLinkTypeAttributes: true,
         minifyJS: true,
         minifyCSS: true
-    }
+    };
     gulp.src('app/*.html')
         .pipe(htmlmin(options))
-        .pipe(gulp.dest('bundle/'))
-})
+        .pipe(gulp.dest('bundle/'));
+});
 
 /////创建一个编译压缩less的命令
 gulp.task('cssmin', function() {
@@ -72,8 +72,8 @@ gulp.task('start', function() {
         env: {
             'NODE_ENV': 'development'
         }
-    })
-})
+    });
+});
 
 
 
