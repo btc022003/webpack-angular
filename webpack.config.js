@@ -1,7 +1,7 @@
-var path = require('path')
-var webpack = require('webpack')
+var path = require('path');
+var webpack = require('webpack');
     ////提取公用插件
-var commonsPlugin = new webpack.optimize.CommonsChunkPlugin('common.js')
+var commonsPlugin = new webpack.optimize.CommonsChunkPlugin('common.js');
 
 var Dashboard = require('webpack-dashboard');
 var DashboardPlugin = require('webpack-dashboard/plugin');
@@ -43,4 +43,4 @@ module.exports = {
             }
         ]
     }
-}
+};
