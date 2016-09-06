@@ -17,7 +17,7 @@ window.Highcharts = Highcharts
 
 require('highcharts-ng')
 
-console.log(tplMain)
+// console.log(tplMain)
 
 
 var app = angular.module('app', ['ngRoute', 'ngCookies','ngAnimate','highcharts-ng'])
