@@ -26,6 +26,10 @@ app.all('/api/*', (req, res, next) => {
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept")
     res.header("Access-Control-Allow-Methods", "PUT,POST,GET,DELETE,OPTIONS")
     res.header("X-Powered-By", ' 3.2.1')
+
+    /*
+当一次OPTIONS请求完成后没有再收到put请求 暂时没找到原因
+     */
     if(req.method == "OPTIONS"){
       res.send('')
     }
