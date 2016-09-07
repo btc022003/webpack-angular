@@ -29,6 +29,7 @@ router.post('/new',(req,res)=>{
 })
 
 router.put('/update/:id',(req,res)=>{
+  console.log(req.body)
   res.json({
     status: 'y',
     msg: '修改人员信息成功'

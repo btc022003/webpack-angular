@@ -19,6 +19,7 @@ app.use(express.static('bundle'))
  * 加入api调用时跨域访问问题的处理
  */
 app.all('/api/*', (req, res, next) => {
+  console.log('请求已到达...')
     res.header('Access-Control-Allow_Origin', '*')
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept")
     res.header("Access-Control-Allow-Methods", "PUT,POST,GET,DELETE,OPTIONS")
@@ -29,6 +30,7 @@ app.all('/api/*', (req, res, next) => {
 
 ////引入api的js
 app.use('/api',require('./routes/api/v1/data.js'))
+app.use('/api/person',require('./routes/api/v1/persons.js'))
 
 app.listen(3000, function() {
     console.log('服务器运行中....')

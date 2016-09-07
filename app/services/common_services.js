@@ -25,5 +25,22 @@ module.exports = function($http,$q){
     })
     return deferred.promise
   }
+
+  // 测试put方式调用接口是否可行
+  services.person_update = function(data){
+    var url = 'http://localhost:3000/api/person/update/1'
+    var deferred = $q.defer()
+    $http({
+      method:"put",
+      url:url,
+      data:data
+    }).success(function(res){
+      deferred.resolve(res)
+    }).error(function(err){
+      deferred.reject(err)
+    })
+    return deferred.promise
+  }
+
   return services
 }

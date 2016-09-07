@@ -1,6 +1,11 @@
-var controller = angular.module('app').controller('loginControl',['$scope','$window','$cookies',function($scope,$window,$cookies){
+var controller = angular.module('app').controller('loginControl',['$scope','$window','$cookies','commonServices',function($scope,$window,$cookies,c_s){
   $scope.logIn = function(){
     console.log($scope.userName)
+
+    c_s.person_update({name:"小明",age:18}).then(function(res){
+      console.log(res)
+    })
+
     if(!$scope.userName){
       alert('用户名不能为空！')
       return false
